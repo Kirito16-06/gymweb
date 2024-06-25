@@ -1,0 +1,86 @@
+/*offering.html */
+
+body .section-offerings .offerings .title {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+body .section-offerings .offerings .offering-list {
+  display: grid;
+  grid-template-columns: repeat(
+    var(--four-col-layout),
+    minmax(min-content, 1fr)
+  );
+  grid-column-gap: 10rem;
+  grid-row-gap: 5rem;
+  justify-content: space-around;
+  margin: 20px 70px;
+}
+
+@media only screen and (max-width: 50em) {
+  body .section-offerings .offerings .offering-list {
+    grid-template-columns: repeat(
+      var(--two-col-layout),
+      minmax(min-content, 1fr)
+    );
+  }
+}
+
+body .section-offerings .offerings .offering-list .offering {
+  cursor: pointer;
+  background-color: #414141;
+  z-index: 10;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.5s;
+}
+
+body .section-offerings .offerings .offering-list .offering .offering-name {
+  padding: 1.5rem;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+body .section-offerings .offerings .offering-list .offering .offering-price {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+body .section-offerings .offerings .offering-list .offering ul {
+  padding: 2rem;
+  list-style: none;
+}
+
+body .section-offerings .offerings .offering-list .offering ul li {
+  margin: 15px 0px;
+}
+
+body .section-offerings .offerings .offering-list .offering a {
+  width: 100%;
+  padding: 15px;
+  color: #000;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.8rem;
+  background-color: var(--color-yellow);
+}
+
+body .section-offerings .offerings .offering-list .offering:hover {
+  transform: scale(1.05);
+}
+
+body .section-offerings .offerings .offering-list .offering a:hover {
+  background-color: var(--color-yellow-dark);
+}
+
+body .section-offerings .offerings .offering-list .offering:hover {
+  transform: scale(1.05);
+}
+
+body .section-offerings .offerings .offering-list .offering a:hover {
+  background-color: var(--color-yellow-dark);
+}

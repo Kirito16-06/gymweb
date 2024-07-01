@@ -20,9 +20,11 @@
                     </a>
                     <div class="logo">GOKU-GYM</div>
                 </div>
-                <img src="https://vfitclub.netlify.app/image/nav-icon.svg" alt="navigation icon" class="nav-hamburger"
-                    width="30" height="30" />
-                <ul>
+                <div class="nav-hamburger" id="nav-hamburger" onclick="toggleMenu()">
+                    <img src="https://vfitclub.netlify.app/image/nav-icon.svg" alt="navigation icon" width="30"
+                        height="30" />
+                </div>
+                <ul id="nav-links" class="nav-links">
                     <li>
                         <a href="#aboutus">About</a>
                     </li>
@@ -39,6 +41,47 @@
             </nav>
         </div>
     </header>
+    <style>
+        .nav-links {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            transition: all 0.2s ease-in-out;
+        }
+        #nav-hamburger.active + .nav-links {
+            display: block;
+        }
+        .nav-links li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-links li a:hover {
+            color: #007bff;
+        }
+        @media only screen and (max-width: 600px) {
+            .nav-links {
+                display: block;
+            }
+            .nav-links.active {
+                display: block;
+            }
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const navHamburger = document.getElementById("nav-hamburger");
+            const navLinks = document.getElementById("nav-links");
+            navHamburger.classList.toggle("active");
+            navLinks.classList.toggle("active");
+        }
+    </script>
     <main>
         <!-- MAIN SECTION -->
         <section class="section-hero" id="section-hero">
@@ -64,7 +107,10 @@
                     .button-container {
                         display: flex;
                         gap: 10px;
-                        background: #000;
+                        background: #a02e2e;
+                        align-items: center;
+                        justify-content: center;
+                        visibility: auto;
                         border: none;
                         color: white;
                         padding: 15px 32px;
@@ -75,7 +121,7 @@
                         margin: 4px 2px;
                         cursor: pointer;
                         border-radius: 5px;
-                        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                        box-shadow: 0 2px 5px rgba(221, 172, 172, 0.1);
                         transition: all 0.2s ease-in-out;
                     }
                     .button-container:hover {
@@ -88,7 +134,7 @@
                     .button2 {background-color: #008CBA;} /* Blue */
                     @media only screen and (max-width: 600px) {
                         .button-container {
-                            visibility: hidden;
+                            visibility: auto;
                         }
                     }
                 </style>
